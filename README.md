@@ -1,2 +1,2 @@
 # jscamp
-repo del jscamp.dev creado por MiduDev
+repo con el código del proyecto del [JSCamp](jscamp.com) creado por MiduDev.
