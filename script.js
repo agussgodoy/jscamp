@@ -23,3 +23,23 @@ jobListingList?.addEventListener('click', (event) => {
         boton.disabled = true;
     }
 })
+
+const locationFilter = document.querySelector('#filter-location');
+
+locationFilter?.addEventListener('change', () => {
+    
+    
+    const jobListingCards = document.querySelectorAll('.job-listing-card');
+    
+    jobListingCards.forEach(jobCard => {
+        
+        const textSmall = jobCard.querySelector('small').textContent.toUpperCase();
+
+        if(!textSmall.includes(locationFilter.value.toUpperCase())){
+            jobCard.style.display = 'none';
+        }else{
+            jobCard.style.display = 'block';
+
+        }
+    })
+})
