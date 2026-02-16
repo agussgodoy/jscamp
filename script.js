@@ -43,3 +43,24 @@ locationFilter?.addEventListener('change', () => {
         }
     })
 })
+
+const technologyFilter = document.querySelector('#filter-technology');
+
+technologyFilter?.addEventListener('change', () => {
+    
+    
+    const jobListingCards = document.querySelectorAll('.job-listing-card');
+    
+    jobListingCards.forEach(jobCard => {
+        
+        const textSmall = jobCard.querySelector('p').textContent.toUpperCase();
+        console.log(technologyFilter.value.toUpperCase())
+
+        if(!textSmall.includes(technologyFilter.value.toUpperCase())){
+            jobCard.style.display = 'none';
+        }else{
+            jobCard.style.display = 'block';
+
+        }
+    })
+})
