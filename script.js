@@ -28,7 +28,6 @@ const locationFilter = document.querySelector('#filter-location');
 
 locationFilter?.addEventListener('change', () => {
     
-    
     const jobListingCards = document.querySelectorAll('.job-listing-card');
     
     jobListingCards.forEach(jobCard => {
@@ -38,7 +37,7 @@ locationFilter?.addEventListener('change', () => {
         if(!textSmall.includes(locationFilter.value.toUpperCase())){
             jobCard.style.display = 'none';
         }else{
-            jobCard.style.display = 'block';
+            jobCard.style.display = 'flex';
 
         }
     })
@@ -48,18 +47,16 @@ const technologyFilter = document.querySelector('#filter-technology');
 
 technologyFilter?.addEventListener('change', () => {
     
-    
     const jobListingCards = document.querySelectorAll('.job-listing-card');
     
     jobListingCards.forEach(jobCard => {
         
         const textSmall = jobCard.querySelector('p').textContent.toUpperCase();
-        console.log(technologyFilter.value.toUpperCase())
 
         if(!textSmall.includes(technologyFilter.value.toUpperCase())){
             jobCard.style.display = 'none';
         }else{
-            jobCard.style.display = 'block';
+            jobCard.style.display = 'flex';
 
         }
     })
