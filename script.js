@@ -54,10 +54,24 @@ technologyFilter?.addEventListener('change', () => {
         const textSmall = jobCard.querySelector('p').textContent.toUpperCase();
 
         if(!textSmall.includes(technologyFilter.value.toUpperCase())){
-            jobCard.style.display = 'none';
+            // jobCard.style.display = 'none';
+            jobCard.classList.add('is-hidden');
         }else{
-            jobCard.style.display = 'flex';
+            // jobCard.style.display = 'flex';
+            jobCard.classList.remove('is-hidden')
 
         }
     })
 })
+
+
+// LLAMADA A LOS DATOS DE EMPLEOS
+// esto se ejecuta de forma asincrónica
+// esto es una promesa
+fetch("./data.json")
+    .then( (response) =>{
+        return response.json()
+    })
+    .then((jobs) => {
+        console.log(jobs)
+    })
